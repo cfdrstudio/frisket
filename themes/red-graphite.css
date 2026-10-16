@@ -1,0 +1,87 @@
+/* Red Graphite — crisp paper, graphite text, and restrained oxblood accents. */
+:root {
+  --bg: #ffffff;
+  --bg-elevated: #faf9f8;
+  --fg: #282626;
+  --fg-muted: #6f6968;
+  --fg-faint: #aaa3a2;
+  --accent: #a92336;
+  --accent-soft: rgba(169, 35, 54, 0.10);
+  --border: #e8e4e3;
+  --border-strong: #d5cecd;
+  --selection: rgba(169, 35, 54, 0.19);
+
+  --sidebar-bg: #f7f5f4;
+  --sidebar-fg: #514b4b;
+  --sidebar-active: rgba(169, 35, 54, 0.12);
+
+  --code-bg: #f5f3f2;
+  --code-fg: #343031;
+  --inline-code-bg: rgba(92, 72, 72, 0.09);
+  --inline-code-fg: #9d293a;
+  --quote-border: #d9cece;
+  --quote-fg: #6f6968;
+  --mark-bg: #f8e6a7;
+  --mark-fg: #282626;
+  --table-border: #e0dada;
+  --table-head-bg: #f3efee;
+
+  --font-body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-heading: var(--font-body);
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --tok-keyword: #982444;
+  --tok-name: #343031;
+  --tok-property: #315f91;
+  --tok-variable: #a64b32;
+  --tok-function: #315f91;
+  --tok-type: #8b6818;
+  --tok-number: #805c17;
+  --tok-string: #3d7545;
+  --tok-comment: #99908f;
+  --tok-operator: #665d5c;
+  --tok-meta: #805c17;
+  --tok-invalid: #bd263b;
+}
+
+html[data-dark="true"] {
+  --bg: #1d1b1c;
+  --bg-elevated: #252223;
+  --fg: #e9e3e3;
+  --fg-muted: #aaa0a1;
+  --fg-faint: #6c6264;
+  --accent: #e17883;
+  --accent-soft: rgba(225, 120, 131, 0.15);
+  --border: #332e30;
+  --border-strong: #453d40;
+  --selection: rgba(225, 120, 131, 0.25);
+
+  --sidebar-bg: #191718;
+  --sidebar-fg: #b5abad;
+  --sidebar-active: rgba(225, 120, 131, 0.17);
+
+  --code-bg: #262223;
+  --code-fg: #e3dcdc;
+  --inline-code-bg: rgba(241, 211, 214, 0.10);
+  --inline-code-fg: #ef9ba3;
+  --quote-border: #59464a;
+  --quote-fg: #aaa0a1;
+  --mark-bg: rgba(220, 173, 67, 0.34);
+  --mark-fg: #fff2d2;
+  --table-border: #393234;
+  --table-head-bg: #292526;
+
+  --tok-keyword: #e59ab1;
+  --tok-name: #e3dcdc;
+  --tok-property: #91b6df;
+  --tok-variable: #e5a17f;
+  --tok-function: #91b6df;
+  --tok-type: #d9bc78;
+  --tok-number: #d9bc78;
+  --tok-string: #a3cb9b;
+  --tok-comment: #766c6e;
+  --tok-operator: #b5abad;
+  --tok-meta: #d9bc78;
+  --tok-invalid: #ff8992;
+}

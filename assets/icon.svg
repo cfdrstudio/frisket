@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+  <title id="title">Frisket — Plum Nib</title>
+  <defs>
+    <linearGradient id="plum" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#644867"/>
+      <stop offset="1" stop-color="#302b47"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="225" fill="url(#plum)"/>
+  <path d="M296 214H416V681L356 824 296 681Z" fill="#f9f2e4"/>
+  <rect x="296" y="214" width="430" height="98" rx="18" fill="#f9f2e4"/>
+  <rect x="296" y="421" width="325" height="98" rx="18" fill="#f9f2e4"/>
+  <circle cx="356" cy="616" r="27" fill="#503c56"/>
+  <path d="M345 623H367L359 812H353Z" fill="#503c56"/>
+</svg>

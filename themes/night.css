@@ -1,0 +1,46 @@
+/* Night — dark in every appearance setting, tuned for long evening sessions. */
+:root, html[data-dark="true"] {
+  --bg: #16181d;
+  --bg-elevated: #1c1f26;
+  --fg: #d8dee9;
+  --fg-muted: #8a93a3;
+  --fg-faint: #575e6c;
+  --accent: #81a1c1;
+  --accent-soft: rgba(129, 161, 193, 0.16);
+  --border: #262a33;
+  --border-strong: #333844;
+  --selection: rgba(129, 161, 193, 0.28);
+
+  --sidebar-bg: #131519;
+  --sidebar-fg: #98a1b0;
+  --sidebar-active: rgba(129, 161, 193, 0.18);
+
+  --code-bg: #1b1e25;
+  --code-fg: #d8dee9;
+  --inline-code-bg: rgba(143, 188, 187, 0.14);
+  --inline-code-fg: #ebcb8b;
+  --quote-border: #3b4252;
+  --quote-fg: #8a93a3;
+  --mark-bg: rgba(235, 203, 139, 0.32);
+  --mark-fg: #eceff4;
+  --table-border: #2b303b;
+  --table-head-bg: #1b1e25;
+
+  --font-body: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: var(--font-body);
+  --font-ui: var(--font-body);
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --tok-keyword: #b48ead;
+  --tok-name: #d8dee9;
+  --tok-property: #88c0d0;
+  --tok-variable: #d08770;
+  --tok-function: #88c0d0;
+  --tok-type: #ebcb8b;
+  --tok-number: #b48ead;
+  --tok-string: #a3be8c;
+  --tok-comment: #616e88;
+  --tok-operator: #81a1c1;
+  --tok-meta: #ebcb8b;
+  --tok-invalid: #bf616a;
+}

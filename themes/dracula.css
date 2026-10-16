@@ -1,0 +1,46 @@
+/* Dracula — deep violet surfaces with vivid pink, cyan, and lime syntax. */
+:root, html[data-dark="true"] {
+  --bg: #282a36;
+  --bg-elevated: #343746;
+  --fg: #f8f8f2;
+  --fg-muted: #c4c5ce;
+  --fg-faint: #777987;
+  --accent: #ff79c6;
+  --accent-soft: rgba(255, 121, 198, 0.16);
+  --border: #414453;
+  --border-strong: #555869;
+  --selection: rgba(189, 147, 249, 0.30);
+
+  --sidebar-bg: #22232e;
+  --sidebar-fg: #d0d0d8;
+  --sidebar-active: rgba(255, 121, 198, 0.18);
+
+  --code-bg: #21222c;
+  --code-fg: #f8f8f2;
+  --inline-code-bg: rgba(189, 147, 249, 0.17);
+  --inline-code-fg: #ff92d0;
+  --quote-border: #bd93f9;
+  --quote-fg: #c4c5ce;
+  --mark-bg: rgba(241, 250, 140, 0.38);
+  --mark-fg: #282a36;
+  --table-border: #494c5a;
+  --table-head-bg: #30323f;
+
+  --font-body: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: var(--font-body);
+  --font-ui: var(--font-body);
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --tok-keyword: #ff79c6;
+  --tok-name: #f8f8f2;
+  --tok-property: #8be9fd;
+  --tok-variable: #ffb86c;
+  --tok-function: #50fa7b;
+  --tok-type: #8be9fd;
+  --tok-number: #bd93f9;
+  --tok-string: #f1fa8c;
+  --tok-comment: #858899;
+  --tok-operator: #ff79c6;
+  --tok-meta: #bd93f9;
+  --tok-invalid: #ff5555;
+}

@@ -1,0 +1,23 @@
+# Normalise line endings. This repo is edited on both Windows and macOS, and
+# without it, files touched on one platform show up as wholly rewritten in the
+# diff on the other.
+* text=auto eol=lf
+
+# Windows-only scripts that some tooling expects with CRLF.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Never touch binaries.
+*.png binary
+*.ico binary
+*.icns binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.pdf binary
+*.docx binary
+*.epub binary
+*.exe binary
+*.appx binary
+*.dmg binary

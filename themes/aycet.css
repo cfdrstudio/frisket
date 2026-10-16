@@ -1,0 +1,46 @@
+/* Aycet — saturated teal and coral over a dark, near-black canvas. */
+:root, html[data-dark="true"] {
+  --bg: #172326;
+  --bg-elevated: #203135;
+  --fg: #e6f0ed;
+  --fg-muted: #a8c0bc;
+  --fg-faint: #647c79;
+  --accent: #ff8066;
+  --accent-soft: rgba(255, 128, 102, 0.16);
+  --border: #304448;
+  --border-strong: #426064;
+  --selection: rgba(71, 218, 196, 0.27);
+
+  --sidebar-bg: #121d20;
+  --sidebar-fg: #b3cbc7;
+  --sidebar-active: rgba(255, 128, 102, 0.18);
+
+  --code-bg: #142023;
+  --code-fg: #e6f0ed;
+  --inline-code-bg: rgba(71, 218, 196, 0.13);
+  --inline-code-fg: #ff9b83;
+  --quote-border: #3fbcae;
+  --quote-fg: #a8c0bc;
+  --mark-bg: rgba(255, 207, 92, 0.38);
+  --mark-fg: #172326;
+  --table-border: #344b4f;
+  --table-head-bg: #24383b;
+
+  --font-body: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: var(--font-body);
+  --font-ui: var(--font-body);
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --tok-keyword: #ff8fbd;
+  --tok-name: #e6f0ed;
+  --tok-property: #57d9cc;
+  --tok-variable: #ff9b83;
+  --tok-function: #70e3b3;
+  --tok-type: #ffd166;
+  --tok-number: #c3a0ff;
+  --tok-string: #b9e879;
+  --tok-comment: #718b87;
+  --tok-operator: #7ddfd3;
+  --tok-meta: #ffd166;
+  --tok-invalid: #ff657a;
+}

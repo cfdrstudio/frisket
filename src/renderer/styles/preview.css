@@ -1,0 +1,167 @@
+/* ---------------------------------------------------------------------------
+   Styling for rendered Markdown (markdown-it output). Used by the in-editor
+   table widgets and inlined verbatim into HTML and PDF exports, so it must
+   stand on its own given only the theme variables.
+   --------------------------------------------------------------------------- */
+
+.md-render {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--fg);
+  word-wrap: break-word;
+}
+
+.md-render > *:first-child { margin-top: 0; }
+.md-render > *:last-child { margin-bottom: 0; }
+
+.md-render h1, .md-render h2, .md-render h3,
+.md-render h4, .md-render h5, .md-render h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.012em;
+  line-height: 1.3;
+}
+
+.md-render h1 { font-size: 1.95em; margin: 1.5em 0 0.5em; }
+.md-render h2 { font-size: 1.55em; margin: 1.35em 0 0.45em; }
+.md-render h3 { font-size: 1.26em; margin: 1.2em 0 0.4em; }
+.md-render h4 { font-size: 1.1em;  margin: 1.1em 0 0.35em; }
+.md-render h5 { font-size: 1em;    margin: 1em 0 0.3em; color: var(--fg-muted); }
+.md-render h6 {
+  font-size: 0.92em;
+  margin: 1em 0 0.3em;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.md-render p { margin: 0 0 1.05em; }
+
+.md-render a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+.md-render a:hover { border-bottom-color: var(--accent); }
+
+.md-render strong { font-weight: 700; }
+.md-render em { font-style: italic; }
+.md-render del { color: var(--fg-muted); }
+.md-render mark { background: var(--mark-bg); color: var(--mark-fg); border-radius: 2px; padding: 0 2px; }
+
+.md-render ul, .md-render ol { margin: 0 0 1.05em; padding-left: 1.6em; }
+.md-render li { margin: 0.2em 0; }
+.md-render li > ul, .md-render li > ol { margin-bottom: 0.2em; }
+.md-render li::marker { color: var(--accent); }
+
+.md-render ul.contains-task-list { list-style: none; padding-left: 0.35em; }
+.md-render .task-list-item { display: flex; align-items: flex-start; gap: 0.5em; }
+.md-render .task-list-item input[type="checkbox"] { margin-top: 0.42em; accent-color: var(--accent); }
+.md-render .task-list-item label { flex: 1; }
+
+.md-render blockquote {
+  margin: 1.05em 0;
+  padding: 0.1em 0 0.1em 1em;
+  border-left: 3px solid var(--quote-border);
+  color: var(--quote-fg);
+  font-style: italic;
+}
+
+.md-render blockquote > *:last-child { margin-bottom: 0; }
+
+.md-render hr {
+  border: 0;
+  border-top: 1px solid var(--border-strong);
+  margin: 2em 0;
+}
+
+.md-render code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--inline-code-bg);
+  color: var(--inline-code-fg);
+  border-radius: 4px;
+  padding: 0.1em 0.34em;
+}
+
+.md-render pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border-radius: var(--radius);
+  padding: 0.9em 1.1em;
+  overflow-x: auto;
+  margin: 1.05em 0;
+  line-height: 1.62;
+}
+
+.md-render pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: 0.86em;
+  border-radius: 0;
+}
+
+.md-render table {
+  border-collapse: collapse;
+  margin: 1.05em 0;
+  font-size: 0.94em;
+  font-family: var(--font-ui);
+  width: auto;
+  max-width: 100%;
+}
+
+.md-render th, .md-render td {
+  border: 1px solid var(--table-border);
+  padding: 0.45em 0.85em;
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-render th { background: var(--table-head-bg); font-weight: 600; }
+.md-render tbody tr:nth-child(even) { background: rgba(127, 127, 127, 0.045); }
+
+.md-render img { max-width: 100%; border-radius: 5px; }
+
+.md-render figure { margin: 1.2em 0; text-align: center; }
+.md-render figcaption { font-size: 0.82em; color: var(--fg-muted); margin-top: 0.5em; font-family: var(--font-ui); }
+
+.md-render .math-display { text-align: center; margin: 1.2em 0; overflow-x: auto; }
+.md-render .math-error { color: #c0392b; font-family: var(--font-mono); font-size: 0.85em; }
+
+.md-render .footnotes {
+  margin-top: 2.4em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  font-size: 0.88em;
+  color: var(--fg-muted);
+}
+
+.md-render .footnote-backref { border: 0; }
+
+.md-render kbd {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--code-bg);
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+}
+
+.md-render .mermaid-source, .md-render .mermaid-rendered { text-align: center; margin: 1.2em 0; }
+.md-render .mermaid-rendered svg { max-width: 100%; height: auto; }
+
+/* highlight.js token classes (used by exported HTML) */
+.md-render .hljs-keyword, .md-render .hljs-selector-tag, .md-render .hljs-literal,
+.md-render .hljs-section, .md-render .hljs-doctag, .md-render .hljs-name { color: var(--tok-keyword); }
+.md-render .hljs-string, .md-render .hljs-regexp, .md-render .hljs-addition,
+.md-render .hljs-attribute, .md-render .hljs-meta .hljs-string { color: var(--tok-string); }
+.md-render .hljs-comment, .md-render .hljs-quote { color: var(--tok-comment); font-style: italic; }
+.md-render .hljs-number, .md-render .hljs-bullet { color: var(--tok-number); }
+.md-render .hljs-title, .md-render .hljs-title.function_ { color: var(--tok-function); }
+.md-render .hljs-type, .md-render .hljs-class .hljs-title, .md-render .hljs-built_in { color: var(--tok-type); }
+.md-render .hljs-attr, .md-render .hljs-variable, .md-render .hljs-template-variable,
+.md-render .hljs-selector-attr, .md-render .hljs-selector-pseudo { color: var(--tok-property); }
+.md-render .hljs-symbol, .md-render .hljs-meta { color: var(--tok-meta); }
+.md-render .hljs-deletion { color: var(--tok-invalid); }
+.md-render .hljs-emphasis { font-style: italic; }
+.md-render .hljs-strong { font-weight: 700; }

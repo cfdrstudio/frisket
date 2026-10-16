@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" data-theme="frisket">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' file: data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self'">
+  <title>Frisket</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/editor.css">
+  <link rel="stylesheet" href="styles/preview.css">
+  <link rel="stylesheet" href="renderer.css">
+  <link rel="stylesheet" id="theme-sheet" href="themes/frisket.css">
+  <style id="custom-css"></style>
+</head>
+<body>
+  <div id="app" class="app">
+
+    <header class="titlebar" id="titlebar">
+      <div class="titlebar-left no-drag">
+        <button class="icon-btn" id="btn-menu" title="Menu (Alt)" aria-label="Menu">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
+            <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="icon-btn" id="btn-sidebar" title="Toggle sidebar (Ctrl+Shift+B)" aria-label="Toggle sidebar">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
+            <rect x="1.5" y="2.5" width="13" height="11" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <path d="M6 2.5v11" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </button>
+        <button class="icon-btn" id="btn-back" title="Back (Alt+Left)" aria-label="Back" disabled>
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M10 3.5L5.5 8l4.5 4.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="btn-forward" title="Forward (Alt+Right)" aria-label="Forward" disabled>
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="titlebar-drag" id="titlebar-drag">
+        <span class="doc-title" id="doc-title">Untitled</span>
+        <span class="doc-dirty" id="doc-dirty" hidden>•</span>
+      </div>
+
+      <div class="titlebar-right no-drag">
+        <button class="icon-btn" id="btn-quick-open" title="Quick Open (Ctrl+P)" aria-label="Quick Open">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" id="btn-backlinks" title="Backlinks (F7)" aria-label="Backlinks">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a2.5 2.5 0 013.5 3.5l-1 1M9 11.5l-1 1A2.5 2.5 0 014.5 9l1-1" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" id="btn-source" title="Source code mode (Ctrl+/)" aria-label="Source mode">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
+            <path d="M5.5 4L2 8l3.5 4M10.5 4L14 8l-3.5 4" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="window-controls">
+          <button class="win-btn" id="win-min" aria-label="Minimize"><svg viewBox="0 0 12 12" width="11" height="11"><path d="M2 6h8" stroke="currentColor" stroke-width="1.1"/></svg></button>
+          <button class="win-btn" id="win-max" aria-label="Maximize"><svg viewBox="0 0 12 12" width="11" height="11"><rect x="2.5" y="2.5" width="7" height="7" stroke="currentColor" stroke-width="1.1" fill="none"/></svg></button>
+          <button class="win-btn win-close" id="win-close" aria-label="Close"><svg viewBox="0 0 12 12" width="11" height="11"><path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.1"/></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" id="sidebar" hidden>
+        <nav class="sidebar-tabs" role="tablist">
+          <button class="sidebar-tab" data-tab="files" role="tab" title="Files (Ctrl+Shift+2)">Files</button>
+          <button class="sidebar-tab" data-tab="outline" role="tab" title="Outline (Ctrl+Shift+1)">Outline</button>
+          <button class="sidebar-tab" data-tab="articles" role="tab" title="Articles (Ctrl+Shift+3)">Articles</button>
+          <button class="sidebar-tab" data-tab="search" role="tab" title="Search all files (Ctrl+Shift+F)">Search</button>
+          <button class="sidebar-tab" data-tab="insights" role="tab" title="Tags, links and attachments (Ctrl+Shift+5)">Insights</button>
+        </nav>
+
+        <div class="sidebar-panels">
+          <section class="sidebar-panel" id="panel-files" role="tabpanel">
+            <div class="panel-head">
+              <span class="panel-folder" id="folder-name">No folder opened</span>
+              <button class="icon-btn small" id="btn-open-folder" title="Open folder">
+                <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M1.5 12.5v-9h4l1.5 2h7.5v7z" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="tree" id="file-tree"></div>
+          </section>
+
+          <section class="sidebar-panel" id="panel-outline" role="tabpanel" hidden>
+            <div class="panel-head"><span class="panel-folder">Outline</span></div>
+            <div class="outline" id="outline"></div>
+          </section>
+
+          <section class="sidebar-panel" id="panel-articles" role="tabpanel" hidden>
+            <div class="panel-head">
+              <span class="panel-folder" id="articles-folder">No folder opened</span>
+            </div>
+            <div class="articles" id="articles"></div>
+          </section>
+
+          <section class="sidebar-panel" id="panel-search" role="tabpanel" hidden>
+            <div class="panel-head">
+              <span class="panel-folder" id="search-scope">No folder opened</span>
+            </div>
+            <div class="search-box">
+              <input type="search" id="search-input" placeholder="Search all files…"
+                     autocomplete="off" spellcheck="false" aria-label="Search all files">
+              <button class="icon-btn small" id="btn-save-search" title="Save this search" aria-label="Save this search">+</button>
+            </div>
+            <div class="saved-searches" id="saved-searches"></div>
+            <div class="search-results" id="search-results"></div>
+          </section>
+
+          <section class="sidebar-panel" id="panel-insights" role="tabpanel" hidden>
+            <div class="panel-head"><span class="panel-folder">Workspace insights</span>
+              <button class="icon-btn small" id="btn-refresh-insights" title="Refresh insights" aria-label="Refresh insights">↻</button>
+            </div>
+            <div class="insights" id="insights"></div>
+          </section>
+        </div>
+      </aside>
+
+      <div class="sidebar-resizer" id="sidebar-resizer" role="separator" aria-orientation="vertical" hidden></div>
+
+      <aside class="library-sidebar" id="library-nav" aria-label="Library navigation">
+        <div class="library-nav-head"><span id="library-name">No library selected</span><button class="icon-btn small" id="library-open" title="Open library" aria-label="Open library">⌄</button></div>
+        <button class="library-new" id="library-new-note">+ New note</button>
+        <nav class="library-filters" aria-label="Library filters">
+          <button class="is-active" data-filter="notes">Notes</button>
+          <button data-filter="untagged">Untagged</button>
+          <button data-filter="todo">Todo</button>
+          <button data-filter="trash">Trash</button>
+        </nav>
+        <div class="library-tags"><div class="library-section-label">Tags</div><div class="library-empty-tags">Tags you type in notes appear here.</div></div>
+      </aside>
+      <div class="library-resizer" id="library-resizer" role="separator" aria-orientation="vertical"></div>
+
+      <section class="notes-pane" aria-label="Notes">
+        <div class="notes-pane-head">
+          <div><strong id="note-list-title">Notes</strong><small id="note-list-count"></small></div>
+          <select id="note-list-sort" aria-label="Sort notes">
+            <option value="modified">Modified</option>
+            <option value="created">Created</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+        <input class="library-search" id="library-search" type="search" placeholder="Search notes…" aria-label="Search notes">
+        <div class="note-list" id="note-list"><div class="note-list-empty">Open a folder to use it as a Frisket library.</div></div>
+      </section>
+      <div class="notes-resizer" id="notes-resizer" role="separator" aria-orientation="vertical"></div>
+
+      <!-- Tabs and the split panes are built here by ui/editorArea.js. -->
+      <main class="main" id="main"></main>
+
+      <aside class="backlinks-pane" id="backlinks-pane" aria-label="Backlinks" hidden>
+        <div class="backlinks-head"><strong>Backlinks</strong>
+          <button class="icon-btn small" id="backlinks-close" title="Close (F7)" aria-label="Close backlinks">×</button></div>
+        <div class="backlinks-body" id="backlinks-body"></div>
+      </aside>
+    </div>
+
+    <footer class="statusbar" id="statusbar">
+      <div class="status-left">
+        <span class="status-item" id="status-path" title=""></span>
+      </div>
+      <div class="status-right">
+        <button class="status-item status-button" id="status-words">0 words</button>
+        <span class="status-item" id="status-reading">0 min read</span>
+        <span class="status-sep"></span>
+        <span class="status-item" id="status-position">Ln 1, Col 1</span>
+      </div>
+    </footer>
+
+    <div class="toast-stack" id="toasts" aria-live="polite"></div>
+
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+    </div>
+  </div>
+
+  <script type="module" src="renderer.js"></script>
+</body>
+</html>

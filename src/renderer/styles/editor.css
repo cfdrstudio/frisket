@@ -1,0 +1,383 @@
+/* ---------------------------------------------------------------------------
+   The live-preview surface. Markdown markers are dimmed while the caret is in
+   a construct and removed by decorations once it leaves, so this file styles
+   both the "rendered" and the "being edited" state of every element.
+   --------------------------------------------------------------------------- */
+
+.cm-editor {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.cm-editor.cm-focused { outline: none !important; }
+
+/* CodeMirror injects its own `font-family: monospace` on .cm-scroller from a
+   style module appended after these sheets, so these need the extra class. */
+.cm-editor .cm-scroller {
+  font-family: var(--font-body);
+  line-height: 1.72;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.cm-editor .cm-content {
+  font-family: var(--font-body);
+  margin: 0 auto;
+  padding: 64px 44px 40vh;
+  caret-color: var(--accent);
+  max-width: 780px;
+  width: 100%;
+}
+
+.cm-line { padding: 0; }
+
+.cm-cursor, .cm-dropCursor { border-left-width: 2px; border-color: var(--accent); }
+.cm-selectionBackground,
+.cm-editor .cm-selectionBackground,
+.cm-editor.cm-focused .cm-selectionBackground { background: var(--selection) !important; }
+.cm-gutters { display: none; }
+
+.cm-placeholder { color: var(--fg-faint); font-style: italic; }
+
+/* --- paragraphs and spacing ---------------------------------------------- */
+.cm-content .cm-line { margin: 0; }
+.cm-content .cm-line:not(:empty) + .cm-line:empty { line-height: 0.7; }
+
+/* --- markers ------------------------------------------------------------- */
+.cm-md-mark {
+  color: var(--fg-faint);
+  font-weight: 400;
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  opacity: 0.75;
+}
+
+.cm-setext-mark { color: var(--fg-faint); font-size: 0.7em; opacity: 0.6; }
+
+/* --- headings ------------------------------------------------------------ */
+.cm-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.012em;
+}
+
+.cm-h1 { font-size: 1.95em; line-height: 1.28; margin: 1.5em 0 0.35em; }
+.cm-h2 { font-size: 1.55em; line-height: 1.32; margin: 1.35em 0 0.3em; }
+.cm-h3 { font-size: 1.26em; line-height: 1.38; margin: 1.2em 0 0.25em; }
+.cm-h4 { font-size: 1.1em;  line-height: 1.44; margin: 1.1em 0 0.2em; }
+.cm-h5 { font-size: 1em;    margin: 1em 0 0.2em; color: var(--fg-muted); }
+.cm-h6 { font-size: 0.92em; margin: 1em 0 0.2em; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.cm-heading .cm-md-mark { font-size: 0.5em; vertical-align: middle; }
+
+/* --- inline emphasis ----------------------------------------------------- */
+.cm-strong { font-weight: 700; color: var(--fg); }
+.cm-em { font-style: italic; }
+.cm-strike { text-decoration: line-through; color: var(--fg-muted); text-decoration-thickness: 1px; }
+.cm-highlight { background: var(--mark-bg); color: var(--mark-fg); border-radius: 2px; padding: 0 1px; }
+.cm-sup { vertical-align: super; font-size: 0.78em; }
+.cm-sub { vertical-align: sub; font-size: 0.78em; }
+
+.cm-inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--inline-code-bg);
+  color: var(--inline-code-fg);
+  border-radius: 4px;
+  padding: 0.1em 0.34em;
+}
+
+.cm-inline-code .cm-md-mark { background: none; }
+
+/* --- links --------------------------------------------------------------- */
+.cm-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); cursor: text; }
+.cm-link:hover { border-bottom-color: var(--accent); }
+.cm-autolink { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.cm-url { color: var(--fg-faint); font-family: var(--font-mono); font-size: 0.84em; }
+
+/* --- blockquote ---------------------------------------------------------- */
+.cm-blockquote {
+  border-left: 3px solid var(--quote-border);
+  padding-left: 1em;
+  margin-left: 0;
+  color: var(--quote-fg);
+  font-style: italic;
+}
+
+/* --- lists --------------------------------------------------------------- */
+.cm-list-item { }
+
+.fk-bullet {
+  color: var(--accent);
+  font-size: 0.95em;
+  display: inline-block;
+  min-width: 0.85em;
+}
+
+.fk-bullet-1, .fk-bullet-2 { color: var(--fg-muted); }
+
+.cm-ordered-mark { color: var(--accent); font-family: var(--font-ui); font-size: 0.9em; }
+
+.fk-task {
+  display: inline-grid;
+  place-items: center;
+  width: 1.05em;
+  height: 1.05em;
+  margin-right: 0.15em;
+  border: 1.5px solid var(--fg-faint);
+  border-radius: 4px;
+  font-size: 0.78em;
+  line-height: 1;
+  color: transparent;
+  cursor: pointer;
+  vertical-align: -0.12em;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.fk-task:hover { border-color: var(--accent); }
+.fk-task.is-checked { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* --- horizontal rule ----------------------------------------------------- */
+.fk-hr { padding: 0.7em 0; }
+.fk-hr hr { border: 0; border-top: 1px solid var(--border-strong); margin: 0; }
+.cm-hr-source { color: var(--fg-faint); letter-spacing: 0.3em; }
+
+/* --- fenced code --------------------------------------------------------- */
+.cm-code-line {
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  line-height: 1.62;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: var(--code-fg);
+}
+
+.cm-code-first { padding-top: 0.7em; border-radius: var(--radius) var(--radius) 0 0; margin-top: 0.6em; }
+.cm-code-last { padding-bottom: 0.7em; border-radius: 0 0 var(--radius) var(--radius); margin-bottom: 0.6em; }
+
+.cm-code-info { color: var(--fg-muted); font-family: var(--font-mono); font-size: 0.9em; }
+
+.fk-code-lang {
+  font-family: var(--font-ui);
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  user-select: none;
+}
+
+/* --- tables -------------------------------------------------------------- */
+.cm-table-source {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--fg-muted);
+  background: var(--code-bg);
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+}
+
+.fk-table { margin: 0.9em 0; overflow-x: auto; }
+.fk-table table { margin: 0; }
+
+/* --- math ---------------------------------------------------------------- */
+.fk-math-block { margin: 1em 0; text-align: center; overflow-x: auto; overflow-y: hidden; padding: 0.3em 0; }
+.fk-math-inline { padding: 0 0.1em; }
+.fk-math-error { color: #c0392b; font-family: var(--font-mono); font-size: 0.85em; }
+.fk-math-empty { color: var(--fg-faint); font-style: italic; font-family: var(--font-ui); font-size: 0.85em; }
+.cm-math-source { font-family: var(--font-mono); font-size: 0.88em; color: var(--accent); }
+.cm-math-block-source { display: inline-block; }
+
+/* --- diagrams ------------------------------------------------------------ */
+.fk-diagram {
+  margin: 1.1em 0;
+  padding: 0.8em;
+  text-align: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.fk-diagram svg { max-width: 100%; height: auto; }
+.fk-diagram-loading, .fk-diagram-empty { color: var(--fg-faint); font-family: var(--font-ui); font-size: 12px; padding: 12px; }
+.fk-diagram-error {
+  color: #c0392b;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* --- images -------------------------------------------------------------- */
+.fk-image-block { display: block; text-align: center; margin: 1.1em 0; }
+.fk-image-inline { display: inline-block; vertical-align: middle; }
+.fk-image img { max-width: 100%; border-radius: 5px; }
+.fk-image-inline img { max-height: 1.6em; vertical-align: middle; }
+.fk-image-caption { display: block; font-size: 0.8em; color: var(--fg-muted); margin-top: 0.45em; font-family: var(--font-ui); }
+.fk-image-missing img { display: none; }
+.fk-image-fallback {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.82em;
+  color: var(--fg-faint);
+  border: 1px dashed var(--border-strong);
+  border-radius: 5px;
+  padding: 0.5em 0.9em;
+}
+
+.cm-image-source { font-family: var(--font-mono); font-size: 0.86em; color: var(--fg-muted); }
+
+/* --- html / comments ----------------------------------------------------- */
+.cm-comment { color: var(--fg-faint); font-family: var(--font-mono); font-size: 0.86em; }
+.cm-html { color: var(--fg-muted); font-family: var(--font-mono); font-size: 0.88em; }
+
+/* --- focus mode ---------------------------------------------------------- */
+.cm-dimmed {
+  opacity: 0.34;
+  transition: opacity 220ms ease;
+}
+
+/* Dark themes carry contrast better, so they can afford a deeper fade. */
+html[data-dark="true"] .cm-dimmed { opacity: 0.28; }
+
+.fk-focus-mode .cm-line:not(.cm-dimmed) { transition: opacity 220ms ease; }
+
+/* --- source mode --------------------------------------------------------- */
+.app.source-mode .cm-content {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  max-width: 900px;
+}
+
+/* --- syntax tokens in code blocks ---------------------------------------- */
+.tok-keyword { color: var(--tok-keyword); }
+.tok-name { color: var(--tok-name); }
+.tok-property { color: var(--tok-property); }
+.tok-variable { color: var(--tok-variable); }
+.tok-function { color: var(--tok-function); }
+.tok-type { color: var(--tok-type); }
+.tok-number { color: var(--tok-number); }
+.tok-string { color: var(--tok-string); }
+.tok-comment { color: var(--tok-comment); font-style: italic; }
+.tok-operator { color: var(--tok-operator); }
+.tok-meta { color: var(--tok-meta); }
+.tok-invalid { color: var(--tok-invalid); text-decoration: underline wavy; }
+.tok-link { color: var(--accent); }
+
+/* --- search panel -------------------------------------------------------- */
+.cm-panels {
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border-color: var(--border) !important;
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+}
+
+.cm-panel.cm-search { padding: 8px 12px; }
+
+.cm-panel.cm-search input,
+.cm-panel.cm-search button,
+.cm-panel.cm-search label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+}
+
+.cm-panel.cm-search input[type="text"] {
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  color: var(--fg);
+  padding: 4px 7px;
+}
+
+.cm-panel.cm-search button {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 5px;
+  color: var(--fg);
+  padding: 3px 9px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.cm-panel.cm-search button:hover { background: var(--accent-soft); }
+.cm-searchMatch { background: rgba(255, 200, 0, 0.32); border-radius: 2px; }
+.cm-searchMatch-selected { background: rgba(255, 150, 0, 0.55); }
+.cm-selectionMatch { background: rgba(127, 127, 127, 0.18); }
+
+/* --- [[note]] and #tag autocompletion ------------------------------------ */
+/* Prefixed to outrank CodeMirror's injected base theme (monospace, tight rows). */
+.app .cm-editor .cm-tooltip.cm-tooltip-autocomplete {
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  padding: 3px;
+}
+
+.app .cm-editor .cm-tooltip.cm-tooltip-autocomplete > ul {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  max-height: 16em;
+  min-width: 220px;
+  max-width: 420px;
+}
+
+.app .cm-editor .cm-tooltip.cm-tooltip-autocomplete > ul > li {
+  border-radius: 5px;
+  padding: 4px 8px;
+  line-height: 1.45;
+}
+
+.app .cm-editor .cm-tooltip.cm-tooltip-autocomplete > ul > li[aria-selected] {
+  background: var(--accent-soft);
+  color: var(--fg);
+}
+
+.app .cm-editor .cm-tooltip-autocomplete .cm-completionDetail {
+  margin-left: 10px;
+  color: var(--fg-faint);
+  font-style: normal;
+  font-size: 11px;
+}
+
+/* --- YAML front matter --------------------------------------------------- */
+.cm-frontmatter {
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  line-height: 1.7;
+  color: var(--fg-muted);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.cm-frontmatter-first { padding-top: 0.5em; border-radius: var(--radius) var(--radius) 0 0; }
+.cm-frontmatter-last { padding-bottom: 0.5em; border-radius: 0 0 var(--radius) var(--radius); margin-bottom: 1em; }
+.cm-frontmatter-mark { color: var(--fg-faint); opacity: 0.7; }
+
+/* --- wiki-links ---------------------------------------------------------- */
+.cm-wikilink {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-soft);
+  cursor: text;
+}
+
+.cm-wikilink:hover { border-bottom-color: var(--accent); }
+.cm-wikilink-target { color: var(--accent); }
+
+/* A target that resolves to nothing yet, so the reader knows before clicking. */
+.cm-wikilink-missing,
+.cm-wikilink-missing .cm-wikilink-target {
+  color: var(--fg-muted);
+  border-bottom-style: dashed;
+  text-decoration-color: var(--fg-faint);
+}

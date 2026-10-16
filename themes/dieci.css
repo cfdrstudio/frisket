@@ -1,0 +1,46 @@
+/* Dieci — quiet midnight blue with warm ivory text and copper accents. */
+:root, html[data-dark="true"] {
+  --bg: #171b22;
+  --bg-elevated: #202630;
+  --fg: #e4e7ec;
+  --fg-muted: #a0a8b5;
+  --fg-faint: #626d7c;
+  --accent: #d7926e;
+  --accent-soft: rgba(215, 146, 110, 0.15);
+  --border: #2c3440;
+  --border-strong: #3b4654;
+  --selection: rgba(215, 146, 110, 0.25);
+
+  --sidebar-bg: #141820;
+  --sidebar-fg: #b0b7c2;
+  --sidebar-active: rgba(215, 146, 110, 0.17);
+
+  --code-bg: #202630;
+  --code-fg: #e4e7ec;
+  --inline-code-bg: rgba(153, 180, 208, 0.13);
+  --inline-code-fg: #e9aa83;
+  --quote-border: #526173;
+  --quote-fg: #a0a8b5;
+  --mark-bg: rgba(218, 178, 94, 0.34);
+  --mark-fg: #fff0cc;
+  --table-border: #303946;
+  --table-head-bg: #242b36;
+
+  --font-body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-heading: var(--font-body);
+  --font-ui: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --tok-keyword: #d7a5cc;
+  --tok-name: #e4e7ec;
+  --tok-property: #8bb9dc;
+  --tok-variable: #e5a17f;
+  --tok-function: #8bb9dc;
+  --tok-type: #dfc07b;
+  --tok-number: #c4a4df;
+  --tok-string: #a4c99a;
+  --tok-comment: #707b89;
+  --tok-operator: #b0b7c2;
+  --tok-meta: #dfc07b;
+  --tok-invalid: #ef8790;
+}

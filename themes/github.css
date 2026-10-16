@@ -1,0 +1,86 @@
+/* GitHub — the familiar README look, sans-serif body and crisp borders. */
+:root {
+  --bg: #ffffff;
+  --bg-elevated: #f6f8fa;
+  --fg: #1f2328;
+  --fg-muted: #656d76;
+  --fg-faint: #a4aab1;
+  --accent: #0969da;
+  --accent-soft: rgba(9, 105, 218, 0.12);
+  --border: #d1d9e0;
+  --border-strong: #c3cbd3;
+  --selection: rgba(9, 105, 218, 0.20);
+
+  --sidebar-bg: #f6f8fa;
+  --sidebar-fg: #4a515a;
+  --sidebar-active: rgba(9, 105, 218, 0.13);
+
+  --code-bg: #f6f8fa;
+  --code-fg: #1f2328;
+  --inline-code-bg: rgba(129, 139, 152, 0.16);
+  --inline-code-fg: #1f2328;
+  --quote-border: #d0d7de;
+  --quote-fg: #656d76;
+  --mark-bg: #fff8c5;
+  --table-border: #d1d9e0;
+  --table-head-bg: #f6f8fa;
+
+  --font-body: -apple-system, "Segoe UI Variable Text", "Segoe UI", system-ui, "Helvetica Neue", sans-serif;
+  --font-heading: var(--font-body);
+  --font-ui: var(--font-body);
+  --font-mono: "Cascadia Code", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --tok-keyword: #cf222e;
+  --tok-name: #1f2328;
+  --tok-property: #0550ae;
+  --tok-variable: #953800;
+  --tok-function: #8250df;
+  --tok-type: #953800;
+  --tok-number: #0550ae;
+  --tok-string: #0a3069;
+  --tok-comment: #6e7781;
+  --tok-operator: #cf222e;
+  --tok-meta: #0550ae;
+  --tok-invalid: #82071e;
+}
+
+html[data-dark="true"] {
+  --bg: #0d1117;
+  --bg-elevated: #161b22;
+  --fg: #e6edf3;
+  --fg-muted: #8d96a0;
+  --fg-faint: #59636e;
+  --accent: #4493f8;
+  --accent-soft: rgba(68, 147, 248, 0.16);
+  --border: #30363d;
+  --border-strong: #3d444d;
+  --selection: rgba(68, 147, 248, 0.28);
+
+  --sidebar-bg: #010409;
+  --sidebar-fg: #9aa4ae;
+  --sidebar-active: rgba(68, 147, 248, 0.18);
+
+  --code-bg: #161b22;
+  --code-fg: #e6edf3;
+  --inline-code-bg: rgba(110, 118, 129, 0.4);
+  --inline-code-fg: #e6edf3;
+  --quote-border: #3d444d;
+  --quote-fg: #8d96a0;
+  --mark-bg: rgba(187, 128, 9, 0.4);
+  --mark-fg: #e6edf3;
+  --table-border: #30363d;
+  --table-head-bg: #161b22;
+
+  --tok-keyword: #ff7b72;
+  --tok-name: #e6edf3;
+  --tok-property: #79c0ff;
+  --tok-variable: #ffa657;
+  --tok-function: #d2a8ff;
+  --tok-type: #ffa657;
+  --tok-number: #79c0ff;
+  --tok-string: #a5d6ff;
+  --tok-comment: #8d96a0;
+  --tok-operator: #ff7b72;
+  --tok-meta: #79c0ff;
+  --tok-invalid: #ffa198;
+}

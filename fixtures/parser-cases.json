@@ -1,0 +1,66 @@
+{
+  "description": "The note parser contract (src/main/workspace.js), checked by tests/parserFixtures.test.cjs. Any other implementation of the parser should pass the same cases. Tags compare case-insensitively as sets; titles and counts compare exactly.",
+  "cases": [
+    {
+      "name": "inline, nested and closed tags",
+      "markdown": "# Plan\n\nUse #work/projects# with #Ideas and #work again.\n",
+      "expect": { "title": "Plan", "tags": ["work/projects", "Ideas", "work"], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "tags differing only in case are one tag",
+      "markdown": "#Work then #work then #WORK\n",
+      "expect": { "title": "note", "tags": ["Work"], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "headings, code, escapes, URLs and HTML hold no tags",
+      "markdown": "# Heading #not-a-tag\nEscaped \\#hidden and real #kept.\nURL https://example.test/#web-tag and www.example.test/#web-too\n<span data-tag=\"#html-attribute\">visible</span>\n`#inline-code`\n```md\n#fenced\n```\n    #indented-code\n",
+      "expect": { "title": "Heading #not-a-tag", "tags": ["kept"], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "bullet and numbered tasks, code ignored",
+      "markdown": "- [ ] one\n- [x] two\n1. [ ] three\n2) [X] four\n* [ ] five\n```\n- [x] in code\n```\n",
+      "expect": { "title": "note", "tags": [], "tasksDone": 2, "tasksTotal": 5, "hasImages": false, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "front-matter tags, title and pin",
+      "markdown": "---\ntitle: \"Field Guide\"\ntags: [alpha, \"beta gamma\"]\nfrisket-pinned: true\n---\n# Ignored heading\n\nMore #delta.\n",
+      "expect": { "title": "Field Guide", "tags": ["alpha", "beta gamma", "delta"], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": false, "pinned": true }
+    },
+    {
+      "name": "front-matter block list of tags",
+      "markdown": "---\ntags:\n  - one\n  - \"#two\"\n---\nText\n",
+      "expect": { "title": "note", "tags": ["one", "two"], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "trashed note",
+      "markdown": "---\nfrisket-id: abc\nfrisket-trashed-at: 2026-01-01T00:00:00Z\n---\n# Old idea\n",
+      "expect": { "title": "Old idea", "tags": [], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": true, "pinned": false }
+    },
+    {
+      "name": "CRLF line endings",
+      "markdown": "---\r\ntags: [crlf]\r\n---\r\n# Windows note\r\n\r\n- [x] done #win\r\n- [ ] open\r\n",
+      "expect": { "title": "Windows note", "tags": ["crlf", "win"], "tasksDone": 1, "tasksTotal": 2, "hasImages": false, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "inline image outside code",
+      "markdown": "Look ![sketch](assets/sketch.png)\n",
+      "expect": { "title": "note", "tags": [], "tasksDone": 0, "tasksTotal": 0, "hasImages": true, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "image only inside code is not an image",
+      "markdown": "```\n![sketch](assets/sketch.png)\n```\n`![x](y.png)`\n",
+      "expect": { "title": "note", "tags": [], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "reference-style image",
+      "markdown": "![Chart][fig]\n\n[fig]: assets/chart.png\n",
+      "expect": { "title": "note", "tags": [], "tasksDone": 0, "tasksTotal": 0, "hasImages": true, "trashed": false, "pinned": false }
+    },
+    {
+      "name": "Unicode tags and title fallback to the file name",
+      "fileName": "Café plans.md",
+      "markdown": "Menu #café/été and #日本語\n",
+      "expect": { "title": "Café plans", "tags": ["café/été", "日本語"], "tasksDone": 0, "tasksTotal": 0, "hasImages": false, "trashed": false, "pinned": false }
+    }
+  ]
+}

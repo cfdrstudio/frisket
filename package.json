@@ -1,0 +1,214 @@
+{
+  "name": "frisket",
+  "productName": "Frisket",
+  "version": "2.2.1",
+  "description": "A distraction-free Markdown editor that masks the syntax as you write",
+  "main": "src/main/main.js",
+  "author": {
+    "name": "CFDR Studio",
+    "url": "https://cfdr.au"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "start": "npm run build && electron .",
+    "dev": "electron .",
+    "icon": "python tools/make_icon.py",
+    "dist": "node build.mjs && node tools/package.mjs",
+    "pack": "node build.mjs && node tools/package.mjs --dir-only",
+    "licenses": "node tools/licenses.mjs",
+    "dist:mac": "node build.mjs && electron-builder --mac",
+    "pack:mac": "node build.mjs && electron-builder --mac --dir",
+    "dist:store": "node build.mjs && electron-builder --win appx",
+    "test": "node --test tests/*.test.cjs tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@electron/notarize": "^2.5.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "esbuild": "^0.24.0"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.18.0",
+    "@codemirror/commands": "^6.7.1",
+    "@codemirror/lang-markdown": "^6.3.1",
+    "@codemirror/language": "^6.10.6",
+    "@codemirror/language-data": "^6.5.1",
+    "@codemirror/search": "^6.5.8",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.35.0",
+    "@lezer/highlight": "^1.2.1",
+    "@lezer/markdown": "^1.4.0",
+    "highlight.js": "^11.10.0",
+    "katex": "^0.16.11",
+    "markdown-it": "^14.1.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "mermaid": "^11.4.1"
+  },
+  "build": {
+    "appId": "au.cfdr.frisket",
+    "productName": "Frisket",
+    "copyright": "Copyright © 2026 CFDR Studio",
+    "directories": {
+      "output": "release",
+      "buildResources": "assets"
+    },
+    "asar": true,
+    "asarUnpack": [
+      "src/main/**/*"
+    ],
+    "files": [
+      "src/main/**/*",
+      "dist/**/*",
+      "assets/icon.png",
+      "assets/icon.ico",
+      "package.json",
+      "!node_modules/**/*",
+      "!**/*.map"
+    ],
+    "extraResources": [
+      {
+        "from": "THIRD-PARTY-NOTICES.md",
+        "to": "THIRD-PARTY-NOTICES.md"
+      },
+      {
+        "from": "LICENSE",
+        "to": "LICENSE"
+      }
+    ],
+    "fileAssociations": [
+      {
+        "ext": "md",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "icon": "assets/icon.ico",
+        "role": "Editor"
+      },
+      {
+        "ext": "markdown",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "icon": "assets/icon.ico",
+        "role": "Editor"
+      },
+      {
+        "ext": "mdown",
+        "name": "Markdown Document",
+        "description": "Markdown Document",
+        "icon": "assets/icon.ico",
+        "role": "Editor"
+      }
+    ],
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": false,
+      "signtoolOptions": {
+        "publisherName": "CFDR Studio"
+      }
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Frisket",
+      "artifactName": "Frisket-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Frisket-${version}-portable.${ext}"
+    },
+    "appx": {
+      "applicationId": "Frisket",
+      "displayName": "Frisket",
+      "publisherDisplayName": "CFDR Studio",
+      "identityName": "REPLACE.WithIdentityNameFromPartnerCenter",
+      "publisher": "CN=REPLACE-WITH-PUBLISHER-ID-FROM-PARTNER-CENTER",
+      "backgroundColor": "#302b47",
+      "languages": [
+        "en-AU",
+        "en-US"
+      ],
+      "showNameOnTiles": false,
+      "setBuildNumber": true,
+      "artifactName": "Frisket-${version}-store.${ext}"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "assets/icon.icns",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "assets/entitlements.mac.plist",
+      "entitlementsInherit": "assets/entitlements.mac.plist",
+      "artifactName": "Frisket-${version}-${arch}.${ext}",
+      "extendInfo": {
+        "NSHumanReadableCopyright": "Copyright © 2026 CFDR Studio",
+        "NSRequiresAquaSystemAppearance": false,
+        "LSMinimumSystemVersion": "11.0.0"
+      }
+    },
+    "afterSign": "tools/notarize.cjs",
+    "dmg": {
+      "title": "Frisket ${version}",
+      "icon": "assets/icon.icns",
+      "contents": [
+        {
+          "x": 140,
+          "y": 200,
+          "type": "file"
+        },
+        {
+          "x": 400,
+          "y": 200,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "width": 540,
+        "height": 380
+      }
+    }
+  },
+  "homepage": "https://cfdr.au",
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/REPLACE-WITH-YOUR-HANDLE"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cfdrstudio/frisket.git"
+  }
+}

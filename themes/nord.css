@@ -1,0 +1,46 @@
+/* Nord — cool arctic blues, soft snow text, and muted aurora accents. */
+:root, html[data-dark="true"] {
+  --bg: #2e3440;
+  --bg-elevated: #3b4252;
+  --fg: #eceff4;
+  --fg-muted: #c3cad5;
+  --fg-faint: #7b8494;
+  --accent: #88c0d0;
+  --accent-soft: rgba(136, 192, 208, 0.15);
+  --border: #434c5e;
+  --border-strong: #505c70;
+  --selection: rgba(136, 192, 208, 0.26);
+
+  --sidebar-bg: #292e39;
+  --sidebar-fg: #c3cad5;
+  --sidebar-active: rgba(136, 192, 208, 0.18);
+
+  --code-bg: #272c36;
+  --code-fg: #e5e9f0;
+  --inline-code-bg: rgba(143, 188, 187, 0.14);
+  --inline-code-fg: #ebcb8b;
+  --quote-border: #5e687b;
+  --quote-fg: #c3cad5;
+  --mark-bg: rgba(235, 203, 139, 0.34);
+  --mark-fg: #2e3440;
+  --table-border: #485264;
+  --table-head-bg: #353c49;
+
+  --font-body: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: var(--font-body);
+  --font-ui: var(--font-body);
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --tok-keyword: #b48ead;
+  --tok-name: #e5e9f0;
+  --tok-property: #88c0d0;
+  --tok-variable: #d08770;
+  --tok-function: #8fbcbb;
+  --tok-type: #ebcb8b;
+  --tok-number: #b48ead;
+  --tok-string: #a3be8c;
+  --tok-comment: #7b8494;
+  --tok-operator: #81a1c1;
+  --tok-meta: #ebcb8b;
+  --tok-invalid: #bf616a;
+}
