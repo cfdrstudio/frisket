@@ -1,7 +1,7 @@
 {
   "name": "frisket",
   "productName": "Frisket",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "A distraction-free Markdown editor that masks the syntax as you write",
   "main": "src/main/main.js",
   "author": {

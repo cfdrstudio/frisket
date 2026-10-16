@@ -64,8 +64,9 @@ npm run dev
 - `npm run dist` builds the Windows installer and portable app into `release/`.
   The source also builds for macOS with `npm run dist:mac` on a Mac.
 - After `npm run build`, `node tools/smoke-library.cjs`,
-  `node tools/smoke-essentials.cjs` and `node tools/smoke-workspace.cjs` drive
-  the real app end to end against throwaway libraries and a throwaway profile.
+  `node tools/smoke-essentials.cjs`, `node tools/smoke-workspace.cjs` and
+  `node tools/smoke-security.cjs` drive the real app end to end against
+  throwaway libraries and a throwaway profile.
 
 Pandoc is GPL-licensed, so it is detected rather than bundled: Frisket looks for
 an installed copy and offers to find one if it is missing.

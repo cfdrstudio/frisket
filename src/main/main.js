@@ -242,7 +242,7 @@ function createWindow(filePath = null) {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
-      sandbox: false,
+      sandbox: true,
       spellcheck: true,
     },
   });
@@ -295,6 +295,16 @@ function createWindow(filePath = null) {
   win.webContents.setWindowOpenHandler(({ url }) => {
     if (/^https?:/i.test(url)) shell.openExternal(url);
     return { action: 'deny' };
+  });
+
+  // Notes may carry raw HTML, so a link, form or refresh in one could otherwise
+  // replace the app with another page that inherits the preload's file access.
+  // The window only ever shows the app itself; web links go to the browser.
+  win.webContents.on('will-navigate', (event, url) => {
+    if (url.split(/[?#]/)[0] === win.webContents.getURL().split(/[?#]/)[0]) return;
+    event.preventDefault();
+    log('blocked navigation', url);
+    if (/^(https?|mailto):/i.test(url)) shell.openExternal(url);
   });
 
   return win;
