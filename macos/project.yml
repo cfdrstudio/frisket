@@ -1,0 +1,128 @@
+# XcodeGen spec for the native macOS app. Regenerate the project with:
+#   cd macos && xcodegen generate
+name: Frisket
+options:
+  bundleIdPrefix: au.cfdr
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    MARKETING_VERSION: "2.2.2"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: "-"
+    DEAD_CODE_STRIPPING: YES
+packages:
+  FrisketBase:
+    path: Packages/FrisketBase
+  FrisketMarkdown:
+    path: Packages/FrisketMarkdown
+  FrisketLibrary:
+    path: Packages/FrisketLibrary
+  FrisketServices:
+    path: Packages/FrisketServices
+  FrisketExport:
+    path: Packages/FrisketExport
+  SwiftMath:
+    url: https://github.com/mgriebling/SwiftMath.git
+    from: "1.7.0"
+targets:
+  Frisket:
+    type: application
+    platform: macOS
+    sources:
+      - path: Frisket
+      - path: ../themes
+        type: folder
+        buildPhase: resources
+      - path: ../assets/icon.icns
+        buildPhase: resources
+      - path: ../LICENSE
+        buildPhase: resources
+      - path: THIRD-PARTY-NOTICES.md
+        buildPhase: resources
+    dependencies:
+      - package: FrisketBase
+      - package: FrisketMarkdown
+      - package: FrisketLibrary
+      - package: FrisketServices
+      - package: FrisketExport
+      - package: SwiftMath
+    entitlements:
+      path: Frisket/Frisket.entitlements
+      properties:
+        com.apple.security.automation.apple-events: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: au.cfdr.frisket
+        PRODUCT_NAME: Frisket
+        INFOPLIST_FILE: Frisket/Info.plist
+        COMBINE_HIDPI_IMAGES: YES
+    info:
+      path: Frisket/Info.plist
+      properties:
+        CFBundleDisplayName: Frisket
+        CFBundleName: Frisket
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        CFBundleIconFile: icon
+        LSApplicationCategoryType: public.app-category.productivity
+        LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
+        NSHumanReadableCopyright: "Copyright © 2026 CFDR Studio"
+        NSPrincipalClass: NSApplication
+        NSSupportsAutomaticTermination: false
+        NSSupportsSuddenTermination: false
+        NSAppleEventsUsageDescription: "Frisket reads your notes from the Notes app when you choose File › Import › Apple Notes."
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: Markdown Document
+            CFBundleTypeRole: Editor
+            LSHandlerRank: Default
+            LSItemContentTypes:
+              - net.daringfireball.markdown
+          - CFBundleTypeName: Folder
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes:
+              - public.folder
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: net.daringfireball.markdown
+            UTTypeDescription: Markdown Document
+            UTTypeConformsTo:
+              - public.plain-text
+            UTTypeTagSpecification:
+              public.filename-extension:
+                - md
+                - markdown
+                - mdown
+                - mkd
+              public.mime-type:
+                - text/markdown
+  FrisketTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: FrisketTests
+    dependencies:
+      - target: Frisket
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: au.cfdr.frisket.tests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Frisket:
+    build:
+      targets:
+        Frisket: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - FrisketTests
+    archive:
+      config: Release

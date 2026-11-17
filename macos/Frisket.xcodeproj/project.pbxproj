@@ -1,0 +1,746 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0318D0754153339AF14D2293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B535156698EE95BE1DD1BFBC /* AppDelegate.swift */; };
+		0A31124F1D4ED9D85AB0D38F /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A725F821B10C37C70995626 /* MainMenu.swift */; };
+		0CFF9D372710EB8B51A9501B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9604168284EDAF82EA0333E3 /* Theme.swift */; };
+		143C2B4F0BBAB447097BD370 /* CapturePanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A760698E036074B77EFD076 /* CapturePanels.swift */; };
+		1BC528A5532FEA8769F844B2 /* HelpWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27766A7A1DEE867CC6B62F2E /* HelpWindows.swift */; };
+		22E5321FEA5FBD8F29E4F1B3 /* EditorCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF40440FFCC5F35AE2E25D31 /* EditorCommands.swift */; };
+		25E9E8C617405BE8D3FD5A84 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4DAACECCD7A61560DF1CBF /* Settings.swift */; };
+		26BEA6FE0609D4587BA3D917 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDF6B2249D0EF8B8D17861 /* LICENSE */; };
+		2C0577E771798095DA7F2D95 /* PathSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85411A432E33D04170DC72B3 /* PathSupport.swift */; };
+		316ACC14B4C3679AE26CDB90 /* FrisketMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = B320FA611B4A2715E8749208 /* FrisketMarkdown */; };
+		390CCB2EB7AA7A85A8F14D7C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C974158502B6E5E3A02CDDC1 /* icon.icns */; };
+		3E750FB583E213F506E50A7B /* InspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6771A0F119381141F6AF821B /* InspectorViewController.swift */; };
+		3E7708CB52DDCA1F775106BE /* MarkdownTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58D4F920B5E3ED3B3D53D0 /* MarkdownTextStorage.swift */; };
+		4C71C2743AC8273F70461965 /* SwiftMath in Frameworks */ = {isa = PBXBuildFile; productRef = 316C7F4253EA8155C44395FB /* SwiftMath */; };
+		4DB9E59E9DFEC2D1784D4344 /* FrisketBase in Frameworks */ = {isa = PBXBuildFile; productRef = EF0D331ACD8EAD957D826C30 /* FrisketBase */; };
+		4FA0B686311D15E341EC860D /* THIRD-PARTY-NOTICES.md in Resources */ = {isa = PBXBuildFile; fileRef = 13B9FCFD38F10231355F5089 /* THIRD-PARTY-NOTICES.md */; };
+		51056DF2F40BE8A581940F84 /* ExportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E76D9B36E041613B1F6EA /* ExportController.swift */; };
+		52AD8B0C05158980FFDA4120 /* ToolPanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1215FD05A6B234C003065D89 /* ToolPanels.swift */; };
+		55C55BA953225EC683A64C25 /* LivePreviewLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0C39CF937F7360C91B63C8 /* LivePreviewLayoutManager.swift */; };
+		5A69F223DCD325067637481D /* AssetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BFD82A0BF098225CEC89E /* AssetStore.swift */; };
+		5F1D851654BB54C3F2C1F726 /* FrisketLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 7BF1FAC356CBA5402AB831EE /* FrisketLibrary */; };
+		65809F8B009CD71903921D4F /* FrisketExport in Frameworks */ = {isa = PBXBuildFile; productRef = 8978AD2CC9FA49EB9B0EDA69 /* FrisketExport */; };
+		699900012EB6605EEC639506 /* VersionHistoryPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8B4AE3431B7FA6E47965E7 /* VersionHistoryPanel.swift */; };
+		7516151FFBBF0FD4A152B1DA /* WidgetRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606665F82E3FA37801D59499 /* WidgetRenderer.swift */; };
+		7600871D28576984CC8A1F4F /* FrisketServices in Frameworks */ = {isa = PBXBuildFile; productRef = BB1F3626CB28B30F67752FE4 /* FrisketServices */; };
+		8044DAB6938C11781586F824 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02BC63E7C5C48456BCBF8C /* NoteListViewController.swift */; };
+		81DE8459F25B8CAAA7F4A78C /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B33AA5CCD5A7BFB566DF70 /* SidebarViewController.swift */; };
+		903FF03E2847C1D56051EDC8 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A31CD9F7E9B0AA83F3BDA1 /* MainWindowController.swift */; };
+		91C23B4A03C36E9DD3AE89AD /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D57F4A280406F6B8C368C9A /* EditorViewController.swift */; };
+		922205F0CC3A3F847F4B7EFD /* QuickOpenPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189BF1FE08C77C78FEB880CF /* QuickOpenPanel.swift */; };
+		9956C60486B04A8EC6BADD27 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = 2C71CBD94E80DD7A80F1BAB6 /* themes */; };
+		9FFD3DC27C83ECE701DC7A27 /* ConflictPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A649399895D012A285782 /* ConflictPanel.swift */; };
+		B7F788E9DAC51A513080427E /* Panels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C87F387F1F948E6C0239894 /* Panels.swift */; };
+		BF717335C71325B855490BF6 /* ExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFE5F5A95B3F6AF6A7B8C4 /* ExportTests.swift */; };
+		C5720CF97E14271017115A61 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC90250C30ADA8AE5C0231 /* LibraryController.swift */; };
+		D19B6EFE7B17E30E669D726F /* SyncSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77CA59C235F793F43D59853 /* SyncSupport.swift */; };
+		D414F6EF561D7E03973DE429 /* MarkdownStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD031CA813F8EEE8B9B6D3A /* MarkdownStyler.swift */; };
+		D4624E49BBBBE1FF76273338 /* ImportFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83D87853A39CFB45EECFF4 /* ImportFlow.swift */; };
+		D829C2F155131AD37EA7445F /* MarkdownTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F4DA3343E53AC4876F58A8 /* MarkdownTextView.swift */; };
+		DA9BE34355D1D4B5B2098E8F /* EditorTypingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBD37163CD10CA26CA83446 /* EditorTypingTests.swift */; };
+		E64F61C0A6F1185FBBB00B94 /* SyncPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA770FD87FF997BE388EB5 /* SyncPanel.swift */; };
+		EBAD11F21015A67D2E1E9E50 /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9D9C18B34187D6C603B1E0 /* PreferencesWindow.swift */; };
+		F729A7D59E0A18E04899236B /* PanelSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066257CD65E33E49EC5AEE5C /* PanelSupport.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCBB20F845902C44370D7B83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 294F2A302236F7F1ED72117E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DEDCDF0B638697D7AD115B8;
+			remoteInfo = Frisket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		066257CD65E33E49EC5AEE5C /* PanelSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelSupport.swift; sourceTree = "<group>"; };
+		0A760698E036074B77EFD076 /* CapturePanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePanels.swift; sourceTree = "<group>"; };
+		1215FD05A6B234C003065D89 /* ToolPanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolPanels.swift; sourceTree = "<group>"; };
+		13B9FCFD38F10231355F5089 /* THIRD-PARTY-NOTICES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "THIRD-PARTY-NOTICES.md"; sourceTree = "<group>"; };
+		15F12376AA943CD56CEBF0C8 /* FrisketServices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FrisketServices; path = Packages/FrisketServices; sourceTree = SOURCE_ROOT; };
+		189BF1FE08C77C78FEB880CF /* QuickOpenPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickOpenPanel.swift; sourceTree = "<group>"; };
+		1C87F387F1F948E6C0239894 /* Panels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panels.swift; sourceTree = "<group>"; };
+		1C8B4AE3431B7FA6E47965E7 /* VersionHistoryPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHistoryPanel.swift; sourceTree = "<group>"; };
+		26A31CD9F7E9B0AA83F3BDA1 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		27766A7A1DEE867CC6B62F2E /* HelpWindows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpWindows.swift; sourceTree = "<group>"; };
+		2C1B4D07DACC2BF21A051EEE /* FrisketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrisketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C71CBD94E80DD7A80F1BAB6 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = themes; path = ../themes; sourceTree = SOURCE_ROOT; };
+		323C4B49CADB488A90B495EC /* FrisketBase */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FrisketBase; path = Packages/FrisketBase; sourceTree = SOURCE_ROOT; };
+		46CC90250C30ADA8AE5C0231 /* LibraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryController.swift; sourceTree = "<group>"; };
+		4D52B1169CBE4D8E20A698BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		584C18B6811158D423B207C3 /* FrisketExport */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FrisketExport; path = Packages/FrisketExport; sourceTree = SOURCE_ROOT; };
+		5D57F4A280406F6B8C368C9A /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		5DEDF6B2249D0EF8B8D17861 /* LICENSE */ = {isa = PBXFileReference; path = LICENSE; sourceTree = "<group>"; };
+		5E83D87853A39CFB45EECFF4 /* ImportFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportFlow.swift; sourceTree = "<group>"; };
+		606665F82E3FA37801D59499 /* WidgetRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetRenderer.swift; sourceTree = "<group>"; };
+		6771A0F119381141F6AF821B /* InspectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorViewController.swift; sourceTree = "<group>"; };
+		69612A8628746A8BFB737881 /* FrisketLibrary */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FrisketLibrary; path = Packages/FrisketLibrary; sourceTree = SOURCE_ROOT; };
+		6A725F821B10C37C70995626 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		6BD031CA813F8EEE8B9B6D3A /* MarkdownStyler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownStyler.swift; sourceTree = "<group>"; };
+		6FEFE5F5A95B3F6AF6A7B8C4 /* ExportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportTests.swift; sourceTree = "<group>"; };
+		85411A432E33D04170DC72B3 /* PathSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathSupport.swift; sourceTree = "<group>"; };
+		9604168284EDAF82EA0333E3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9CC6C95C75755C70A2A034F8 /* Frisket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frisket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A82E76D9B36E041613B1F6EA /* ExportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportController.swift; sourceTree = "<group>"; };
+		AC4DAACECCD7A61560DF1CBF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		AD0C39CF937F7360C91B63C8 /* LivePreviewLayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePreviewLayoutManager.swift; sourceTree = "<group>"; };
+		B3F4DA3343E53AC4876F58A8 /* MarkdownTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTextView.swift; sourceTree = "<group>"; };
+		B535156698EE95BE1DD1BFBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B77CA59C235F793F43D59853 /* SyncSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSupport.swift; sourceTree = "<group>"; };
+		B9B33AA5CCD5A7BFB566DF70 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
+		BD1A649399895D012A285782 /* ConflictPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConflictPanel.swift; sourceTree = "<group>"; };
+		BF40440FFCC5F35AE2E25D31 /* EditorCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorCommands.swift; sourceTree = "<group>"; };
+		C974158502B6E5E3A02CDDC1 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		CB4BFD82A0BF098225CEC89E /* AssetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetStore.swift; sourceTree = "<group>"; };
+		CE9D9C18B34187D6C603B1E0 /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		CEEC6AD9310ED972438B2A36 /* FrisketMarkdown */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FrisketMarkdown; path = Packages/FrisketMarkdown; sourceTree = SOURCE_ROOT; };
+		CF0528775AC55623A7BAF23F /* Frisket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Frisket.entitlements; sourceTree = "<group>"; };
+		DE02BC63E7C5C48456BCBF8C /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		EB58D4F920B5E3ED3B3D53D0 /* MarkdownTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTextStorage.swift; sourceTree = "<group>"; };
+		FAFA770FD87FF997BE388EB5 /* SyncPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPanel.swift; sourceTree = "<group>"; };
+		FEBD37163CD10CA26CA83446 /* EditorTypingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTypingTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C717558089CFC61CCC23C26A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DB9E59E9DFEC2D1784D4344 /* FrisketBase in Frameworks */,
+				316ACC14B4C3679AE26CDB90 /* FrisketMarkdown in Frameworks */,
+				5F1D851654BB54C3F2C1F726 /* FrisketLibrary in Frameworks */,
+				7600871D28576984CC8A1F4F /* FrisketServices in Frameworks */,
+				65809F8B009CD71903921D4F /* FrisketExport in Frameworks */,
+				4C71C2743AC8273F70461965 /* SwiftMath in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10BF5F2A113BE7363745F9F5 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				BF40440FFCC5F35AE2E25D31 /* EditorCommands.swift */,
+				5D57F4A280406F6B8C368C9A /* EditorViewController.swift */,
+				AD0C39CF937F7360C91B63C8 /* LivePreviewLayoutManager.swift */,
+				6BD031CA813F8EEE8B9B6D3A /* MarkdownStyler.swift */,
+				EB58D4F920B5E3ED3B3D53D0 /* MarkdownTextStorage.swift */,
+				B3F4DA3343E53AC4876F58A8 /* MarkdownTextView.swift */,
+				606665F82E3FA37801D59499 /* WidgetRenderer.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		1B9039B1EF9FC8A4A08DF6ED /* frisket_MACOS */ = {
+			isa = PBXGroup;
+			children = (
+				5DEDF6B2249D0EF8B8D17861 /* LICENSE */,
+				2C71CBD94E80DD7A80F1BAB6 /* themes */,
+				E007B0CE85BFF0FEE004A09F /* assets */,
+			);
+			name = frisket_MACOS;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		2228626F673BA097000E8E50 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9604168284EDAF82EA0333E3 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		27B59A9066D881B43B741212 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				CB4BFD82A0BF098225CEC89E /* AssetStore.swift */,
+				46CC90250C30ADA8AE5C0231 /* LibraryController.swift */,
+				85411A432E33D04170DC72B3 /* PathSupport.swift */,
+				B77CA59C235F793F43D59853 /* SyncSupport.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		28F091DE02F2AF911997221D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B535156698EE95BE1DD1BFBC /* AppDelegate.swift */,
+				6A725F821B10C37C70995626 /* MainMenu.swift */,
+				AC4DAACECCD7A61560DF1CBF /* Settings.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		30A84D6015FBA428AF3F6B46 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				6771A0F119381141F6AF821B /* InspectorViewController.swift */,
+				26A31CD9F7E9B0AA83F3BDA1 /* MainWindowController.swift */,
+				DE02BC63E7C5C48456BCBF8C /* NoteListViewController.swift */,
+				189BF1FE08C77C78FEB880CF /* QuickOpenPanel.swift */,
+				B9B33AA5CCD5A7BFB566DF70 /* SidebarViewController.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		512276B2F492DBA866EBCE24 = {
+			isa = PBXGroup;
+			children = (
+				13B9FCFD38F10231355F5089 /* THIRD-PARTY-NOTICES.md */,
+				E3A9D2B8FB193AB82F3C830C /* Frisket */,
+				1B9039B1EF9FC8A4A08DF6ED /* frisket_MACOS */,
+				CF8313EEBA745244419B5372 /* FrisketTests */,
+				6AA027E697ED6C1AB3B1A4F9 /* Packages */,
+				B231408AB0DDE90B6CF11895 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6AA027E697ED6C1AB3B1A4F9 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				323C4B49CADB488A90B495EC /* FrisketBase */,
+				584C18B6811158D423B207C3 /* FrisketExport */,
+				69612A8628746A8BFB737881 /* FrisketLibrary */,
+				CEEC6AD9310ED972438B2A36 /* FrisketMarkdown */,
+				15F12376AA943CD56CEBF0C8 /* FrisketServices */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		B231408AB0DDE90B6CF11895 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CC6C95C75755C70A2A034F8 /* Frisket.app */,
+				2C1B4D07DACC2BF21A051EEE /* FrisketTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6AA6C839E06E06D10642DEA /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				0A760698E036074B77EFD076 /* CapturePanels.swift */,
+				BD1A649399895D012A285782 /* ConflictPanel.swift */,
+				27766A7A1DEE867CC6B62F2E /* HelpWindows.swift */,
+				5E83D87853A39CFB45EECFF4 /* ImportFlow.swift */,
+				1C87F387F1F948E6C0239894 /* Panels.swift */,
+				066257CD65E33E49EC5AEE5C /* PanelSupport.swift */,
+				CE9D9C18B34187D6C603B1E0 /* PreferencesWindow.swift */,
+				FAFA770FD87FF997BE388EB5 /* SyncPanel.swift */,
+				1215FD05A6B234C003065D89 /* ToolPanels.swift */,
+				1C8B4AE3431B7FA6E47965E7 /* VersionHistoryPanel.swift */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		CD19233224747978BA6FC7DE /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				A82E76D9B36E041613B1F6EA /* ExportController.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		CF8313EEBA745244419B5372 /* FrisketTests */ = {
+			isa = PBXGroup;
+			children = (
+				FEBD37163CD10CA26CA83446 /* EditorTypingTests.swift */,
+				6FEFE5F5A95B3F6AF6A7B8C4 /* ExportTests.swift */,
+			);
+			path = FrisketTests;
+			sourceTree = "<group>";
+		};
+		E007B0CE85BFF0FEE004A09F /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				C974158502B6E5E3A02CDDC1 /* icon.icns */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		E3A9D2B8FB193AB82F3C830C /* Frisket */ = {
+			isa = PBXGroup;
+			children = (
+				CF0528775AC55623A7BAF23F /* Frisket.entitlements */,
+				4D52B1169CBE4D8E20A698BB /* Info.plist */,
+				28F091DE02F2AF911997221D /* App */,
+				10BF5F2A113BE7363745F9F5 /* Editor */,
+				CD19233224747978BA6FC7DE /* Export */,
+				27B59A9066D881B43B741212 /* Library */,
+				B6AA6C839E06E06D10642DEA /* Panels */,
+				2228626F673BA097000E8E50 /* Theme */,
+				30A84D6015FBA428AF3F6B46 /* Window */,
+			);
+			path = Frisket;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DEDCDF0B638697D7AD115B8 /* Frisket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39FEF3874E1D876DBEEA4674 /* Build configuration list for PBXNativeTarget "Frisket" */;
+			buildPhases = (
+				3FF25AC47A2AD750BD61F227 /* Sources */,
+				D0CB1E980592CB7462BFA398 /* Resources */,
+				C717558089CFC61CCC23C26A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Frisket;
+			packageProductDependencies = (
+				EF0D331ACD8EAD957D826C30 /* FrisketBase */,
+				B320FA611B4A2715E8749208 /* FrisketMarkdown */,
+				7BF1FAC356CBA5402AB831EE /* FrisketLibrary */,
+				BB1F3626CB28B30F67752FE4 /* FrisketServices */,
+				8978AD2CC9FA49EB9B0EDA69 /* FrisketExport */,
+				316C7F4253EA8155C44395FB /* SwiftMath */,
+			);
+			productName = Frisket;
+			productReference = 9CC6C95C75755C70A2A034F8 /* Frisket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3A6B3554CC393F1776460E8 /* FrisketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74D84A27A1A327008812D5C3 /* Build configuration list for PBXNativeTarget "FrisketTests" */;
+			buildPhases = (
+				03FCE2865EE86AE8824B5893 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7612409EEB54116C404859DC /* PBXTargetDependency */,
+			);
+			name = FrisketTests;
+			packageProductDependencies = (
+			);
+			productName = FrisketTests;
+			productReference = 2C1B4D07DACC2BF21A051EEE /* FrisketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		294F2A302236F7F1ED72117E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5DEDCDF0B638697D7AD115B8 = {
+						ProvisioningStyle = Automatic;
+					};
+					E3A6B3554CC393F1776460E8 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EED1FCBCD7D34599CC4F4966 /* Build configuration list for PBXProject "Frisket" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 512276B2F492DBA866EBCE24;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A03792CA27C24998D43B537F /* XCRemoteSwiftPackageReference "SwiftMath" */,
+				F7680E37B24E88DEC9EE746A /* XCLocalSwiftPackageReference "Packages/FrisketBase" */,
+				9CF3513ADEA92ABCCCACD2CC /* XCLocalSwiftPackageReference "Packages/FrisketExport" */,
+				20EB2BEBC78EEF53685273BE /* XCLocalSwiftPackageReference "Packages/FrisketLibrary" */,
+				627C2C61956365D61CCA1BDA /* XCLocalSwiftPackageReference "Packages/FrisketMarkdown" */,
+				AF784567FAEE207CD561912A /* XCLocalSwiftPackageReference "Packages/FrisketServices" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DEDCDF0B638697D7AD115B8 /* Frisket */,
+				E3A6B3554CC393F1776460E8 /* FrisketTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0CB1E980592CB7462BFA398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26BEA6FE0609D4587BA3D917 /* LICENSE in Resources */,
+				4FA0B686311D15E341EC860D /* THIRD-PARTY-NOTICES.md in Resources */,
+				390CCB2EB7AA7A85A8F14D7C /* icon.icns in Resources */,
+				9956C60486B04A8EC6BADD27 /* themes in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03FCE2865EE86AE8824B5893 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA9BE34355D1D4B5B2098E8F /* EditorTypingTests.swift in Sources */,
+				BF717335C71325B855490BF6 /* ExportTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FF25AC47A2AD750BD61F227 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0318D0754153339AF14D2293 /* AppDelegate.swift in Sources */,
+				5A69F223DCD325067637481D /* AssetStore.swift in Sources */,
+				143C2B4F0BBAB447097BD370 /* CapturePanels.swift in Sources */,
+				9FFD3DC27C83ECE701DC7A27 /* ConflictPanel.swift in Sources */,
+				22E5321FEA5FBD8F29E4F1B3 /* EditorCommands.swift in Sources */,
+				91C23B4A03C36E9DD3AE89AD /* EditorViewController.swift in Sources */,
+				51056DF2F40BE8A581940F84 /* ExportController.swift in Sources */,
+				1BC528A5532FEA8769F844B2 /* HelpWindows.swift in Sources */,
+				D4624E49BBBBE1FF76273338 /* ImportFlow.swift in Sources */,
+				3E750FB583E213F506E50A7B /* InspectorViewController.swift in Sources */,
+				C5720CF97E14271017115A61 /* LibraryController.swift in Sources */,
+				55C55BA953225EC683A64C25 /* LivePreviewLayoutManager.swift in Sources */,
+				0A31124F1D4ED9D85AB0D38F /* MainMenu.swift in Sources */,
+				903FF03E2847C1D56051EDC8 /* MainWindowController.swift in Sources */,
+				D414F6EF561D7E03973DE429 /* MarkdownStyler.swift in Sources */,
+				3E7708CB52DDCA1F775106BE /* MarkdownTextStorage.swift in Sources */,
+				D829C2F155131AD37EA7445F /* MarkdownTextView.swift in Sources */,
+				8044DAB6938C11781586F824 /* NoteListViewController.swift in Sources */,
+				F729A7D59E0A18E04899236B /* PanelSupport.swift in Sources */,
+				B7F788E9DAC51A513080427E /* Panels.swift in Sources */,
+				2C0577E771798095DA7F2D95 /* PathSupport.swift in Sources */,
+				EBAD11F21015A67D2E1E9E50 /* PreferencesWindow.swift in Sources */,
+				922205F0CC3A3F847F4B7EFD /* QuickOpenPanel.swift in Sources */,
+				25E9E8C617405BE8D3FD5A84 /* Settings.swift in Sources */,
+				81DE8459F25B8CAAA7F4A78C /* SidebarViewController.swift in Sources */,
+				E64F61C0A6F1185FBBB00B94 /* SyncPanel.swift in Sources */,
+				D19B6EFE7B17E30E669D726F /* SyncSupport.swift in Sources */,
+				0CFF9D372710EB8B51A9501B /* Theme.swift in Sources */,
+				52AD8B0C05158980FFDA4120 /* ToolPanels.swift in Sources */,
+				699900012EB6605EEC639506 /* VersionHistoryPanel.swift in Sources */,
+				7516151FFBBF0FD4A152B1DA /* WidgetRenderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7612409EEB54116C404859DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DEDCDF0B638697D7AD115B8 /* Frisket */;
+			targetProxy = CCBB20F845902C44370D7B83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		153372B2FCCC2E419B8AA05F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2.2.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5BE4CBC23718714CED27A355 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Frisket/Frisket.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Frisket/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.cfdr.frisket;
+				PRODUCT_NAME = Frisket;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5C0BA1E788639C78722A59ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.cfdr.frisket.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frisket.app/Contents/MacOS/Frisket";
+			};
+			name = Debug;
+		};
+		65F287844F43089C2678D585 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.cfdr.frisket.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frisket.app/Contents/MacOS/Frisket";
+			};
+			name = Release;
+		};
+		8E2667A47FB89FCFF1984D55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2.2.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		970381485EF2EB4D4535B0A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Frisket/Frisket.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Frisket/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.cfdr.frisket;
+				PRODUCT_NAME = Frisket;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39FEF3874E1D876DBEEA4674 /* Build configuration list for PBXNativeTarget "Frisket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				970381485EF2EB4D4535B0A1 /* Debug */,
+				5BE4CBC23718714CED27A355 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		74D84A27A1A327008812D5C3 /* Build configuration list for PBXNativeTarget "FrisketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C0BA1E788639C78722A59ED /* Debug */,
+				65F287844F43089C2678D585 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EED1FCBCD7D34599CC4F4966 /* Build configuration list for PBXProject "Frisket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E2667A47FB89FCFF1984D55 /* Debug */,
+				153372B2FCCC2E419B8AA05F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		20EB2BEBC78EEF53685273BE /* XCLocalSwiftPackageReference "Packages/FrisketLibrary" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/FrisketLibrary;
+		};
+		627C2C61956365D61CCA1BDA /* XCLocalSwiftPackageReference "Packages/FrisketMarkdown" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/FrisketMarkdown;
+		};
+		9CF3513ADEA92ABCCCACD2CC /* XCLocalSwiftPackageReference "Packages/FrisketExport" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/FrisketExport;
+		};
+		AF784567FAEE207CD561912A /* XCLocalSwiftPackageReference "Packages/FrisketServices" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/FrisketServices;
+		};
+		F7680E37B24E88DEC9EE746A /* XCLocalSwiftPackageReference "Packages/FrisketBase" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/FrisketBase;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A03792CA27C24998D43B537F /* XCRemoteSwiftPackageReference "SwiftMath" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mgriebling/SwiftMath.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		316C7F4253EA8155C44395FB /* SwiftMath */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A03792CA27C24998D43B537F /* XCRemoteSwiftPackageReference "SwiftMath" */;
+			productName = SwiftMath;
+		};
+		7BF1FAC356CBA5402AB831EE /* FrisketLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FrisketLibrary;
+		};
+		8978AD2CC9FA49EB9B0EDA69 /* FrisketExport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FrisketExport;
+		};
+		B320FA611B4A2715E8749208 /* FrisketMarkdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FrisketMarkdown;
+		};
+		BB1F3626CB28B30F67752FE4 /* FrisketServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FrisketServices;
+		};
+		EF0D331ACD8EAD957D826C30 /* FrisketBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FrisketBase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 294F2A302236F7F1ED72117E /* Project object */;
+}
