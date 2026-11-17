@@ -37,6 +37,15 @@ xcodebuild -project Frisket.xcodeproj -scheme Frisket -configuration Release bui
 in so the project opens without XcodeGen, but run `xcodegen generate` again after
 adding or removing source files, and edit `project.yml` rather than the project.
 
+To make a drag-to-install disk image, run:
+
+```bash
+macos/scripts/make-dmg.sh
+```
+
+It builds a universal (Apple silicon and Intel) Release copy and writes
+`release/Frisket-<version>.dmg` at the repository root.
+
 Builds are signed ad hoc (`CODE_SIGN_IDENTITY = "-"`) with the hardened runtime.
 To distribute a build, set your Developer ID team in Xcode and notarise it; an
 unsigned copy downloaded from the internet is blocked by Gatekeeper until it is
