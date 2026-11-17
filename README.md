@@ -49,6 +49,12 @@ page:
 The builds are not code-signed yet, so Windows SmartScreen asks before the first
 run: choose **More info → Run anyway**.
 
+### macOS
+
+A native Mac version, written in Swift on AppKit rather than Electron, lives in
+[`macos/`](macos/). It opens the same libraries and themes. See
+[macos/README.md](macos/README.md) to build it with Xcode.
+
 ## Build from source
 
 You need Node.js 20 or newer.
